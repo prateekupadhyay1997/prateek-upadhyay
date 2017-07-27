@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+#form1 table tr td {
+	font-family: Verdana, Geneva, sans-serif;
+}
+.button {
+width:90px;
+height:60px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+</style>
+
+</head>
+
+<body background="background/background3.jpg">
+
+  <table width="100%">
+    <tr>
+      <td width="167" height="58"><div align="left"><img src="myimages/logo3.jpg"/></div></td>
+      <td width="150"><div align="right">
+         <button class="button" name="home" onclick="home();" value="home">Home</button>
+            <script type="text/javascript">
+  function home(){
+    window.location = "home.jsp";
+  }
+</script>
+         
+      </div></td>
+      <td width="165"><div align="right">
+        <button class="button" name="logout" onclick="logout();" value="logout">Logout</button>
+          <script type="text/javascript">
+  function logout(){
+    window.location = "adminlogout.jsp";
+  }
+</script>
+      </div></td>
+       
+      
+    </tr>
+    </table>
+
+<form  name="form1" action="insertion.jsp">
+  <table width="902" border="1">
+    <tr>
+      <td width="202" height="52"><strong><em><u>Watches Details</u></em></strong></td>
+      <td width="390">&nbsp;</td>
+      <td width="288">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="63"><h2>Id</h2></td>
+      <td><label for="textfield"></label>
+      <input type="text" name="id" /></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="66"><h2>Price</h2></td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="price" /></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="63"><h2>Name</h2></td>
+      <td><label for="textfield3"></label>
+      <input type="text" name="name" /></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="67"><h2>features</h2></td>
+      <td><label for="textarea"></label>
+      <textarea name="features"cols="45" rows="5"></textarea></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="78"><h2>seller</h2></td>
+      <td><label for="textfield4"></label>
+      <input type="text" name="seller" /></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="69"><h2>category</h2></td>
+      <td><input type="radio" name="category" value="men" />
+      <label for="radio">men<br />
+        <input type="radio" name="category" value="women" />
+        women
+      </label></td>
+      <td>&nbsp;</td>
+    </tr>
+     <tr>
+       <td height="69"><h2>charges</h2></td>
+       <td><label for="textfield5"></label>
+       <input type="text" name="charges"/></td>
+       <td>&nbsp;</td>
+     </tr>
+     <tr>
+      <td height="69"><div align="center"></div></td>
+      <td><div align="center">
+        <p>
+          <input type="submit" class="button" name="insert"value="Insert Data" />
+        </p>
+      </div></td>
+      <td><div align="center"></div></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
