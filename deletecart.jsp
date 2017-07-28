@@ -13,9 +13,9 @@
 <%
 	String sid=request.getParameter("id");
 	try{
-	     Class.forName("oracle.jdbc.driver.OracleDriver");
-	     Connection conn=DriverManager.getConnection("jdbc:oracle:thin://@localhost:1521:XE","system","system");
-	     String query="delete * from cart where  id='"+sid+"'";
+		 Class.forName("oracle.jdbc.driver.OracleDriver");
+	     Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","prateek","prateek");
+	     String query="delete from cart where id='"+sid+"'" ;
 	     Statement st=conn.createStatement();
 	     ResultSet rs=st.executeQuery(query);
 	     response.sendRedirect("showcart.jsp");
@@ -36,7 +36,7 @@
 	     <%
 	     }
 	     }
-	     catch(Exception e){}
+	     catch(Exception e){System.out.println(e.toString());}
 	     %>
 	     </table>
 </body>
