@@ -13,33 +13,37 @@
 	String sid=request.getParameter("id");
 String ivar=request.getParameter("ivar");
 out.println("id is"+sid);
+String i=null;String name=null;String price=null;
     %>
-    <%
+    <% try{
 	     Class.forName("oracle.jdbc.driver.OracleDriver");
 	     Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","prateek","prateek");
 	     String query="select * from watches where id='"+sid+"'";
 	     Statement st=conn.createStatement();
 	     ResultSet rs=st.executeQuery(query);
-	     String i=rs.getString(1);
-	     String name=rs.getString(3);
-	     String price=rs.getString(2);
+	     while(rs.next()){
+	      i=rs.getString(1);
+	      name=rs.getString(3);
+	      price=rs.getString(2);
+	     }
+    }catch(Exception e){e.toString();}
 	      %>
 	      <%
 
 try{
    Class.forName("oracle.jdbc.driver.OracleDriver");
    Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","prateek","prateek");
-	PreparedStatement pst=con.prepareStatement("insert into cart(id,price,name) values('"+i+"','"+price+"','"+name+"')");
+	PreparedStatement pst=con.prepareStatement("insert into cart(id,price,name,ivar) values('"+i+"','"+price+"','"+name+"','"+ivar+"')");
 int j=pst.executeUpdate();
 if(j>0)
 {
 %>	
 <%="successfully inserted "%>
-<% 
+<%response.sendRedirect("home.jsp"); 
  }%>
 <% 
 con.close();
-}catch(Exception e){System.out.println(e);}
+}catch(Exception e){System.out.println(e.toString());}
 %>
 </body>
 </html>
